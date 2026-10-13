@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="积木工坊 Brick Workshop 技术支持：联系开发者、GLB 导入、项目保存、Pro 恢复购买与常见问题。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <title>技术支持 · 积木工坊 Brick Workshop</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f9f8fd; --paper: #fff; --ink: #25202e; --muted: #686173; --accent: #6d28d9; --tint: #f2ecff; --line: #e8e2ef; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 4px; }
+    .skip { position: absolute; left: 16px; top: -100px; z-index: 2; background: var(--paper); padding: 8px 16px; }
+    .skip:focus { top: 12px; }
+    .topbar { max-width: 1040px; margin: auto; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+    .brand img { display: block; flex: none; width: 40px; height: 40px; border-radius: 10px; }
+    .brand strong { display: block; font-size: 17px; line-height: 1.35; }
+    .brand small { display: block; color: var(--muted); font-size: 12px; letter-spacing: .025em; }
+    .page-nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; }
+    .page-nav a { text-decoration: none; color: var(--muted); }
+    .page-nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+    main { max-width: 840px; margin: 22px auto 64px; padding: 0 28px; }
+    .tools { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .eyebrow { color: var(--muted); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .languages { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); padding: 4px; }
+    .languages a { min-width: 70px; padding: 3px 12px; text-align: center; border-radius: 999px; color: var(--muted); font-size: 13px; text-decoration: none; }
+    .languages a[aria-current="true"] { color: var(--accent); background: var(--tint); font-weight: 600; }
+    article { scroll-margin-top: 24px; }
+    h1 { margin: 0 0 12px; font-size: clamp(32px, 6vw, 46px); line-height: 1.25; letter-spacing: -.035em; }
+    .meta { margin: 0 0 22px; font-size: 13px; color: var(--muted); }
+    .intro { margin: 0 0 26px; color: var(--muted); font-size: 17px; }
+    .contact { margin: 0 0 18px; display: block; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; }
+    .contact h2 { margin: 0 0 18px; color: var(--ink); }
+    .contact p { margin: 12px 0; }
+    .contact p:last-child { margin-bottom: 0; }
+    .email { font-size: 18px; font-weight: 600; }
+    .email:hover { text-decoration: underline; }
+    .small { font-size: 13px; color: var(--muted); }
+    .document { display: grid; gap: 18px; }
+    .document > section { border: 1px solid var(--line); border-radius: 16px; background: var(--paper); padding: 24px 28px; }
+    h2 { font-size: 19px; font-weight: 650; line-height: 1.5; margin: 0 0 18px; }
+    p { margin: 12px 0; }
+    p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
+    ul { padding-left: 1.4em; margin: 12px 0; }
+    li + li { margin-top: 10px; }
+    ol { list-style: none; counter-reset: step; margin: 0; padding: 0; }
+    ol > li { position: relative; counter-increment: step; padding-left: 38px; min-height: 28px; }
+    ol > li::before { content: counter(step); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 8px; background: var(--tint); color: var(--accent); text-align: center; font-size: 13px; font-weight: 650; line-height: 26px; }
+    .note { background: var(--tint); border-radius: 10px; padding: 14px 16px; margin-top: 18px; font-size: 14px; }
+    details { border-top: 1px solid var(--line); }
+    details:first-of-type { border-top: 0; }
+    summary { position: relative; list-style: none; cursor: pointer; font-size: 15px; font-weight: 600; line-height: 1.65; padding: 16px 30px 16px 0; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 0; top: 14px; color: var(--muted); font-size: 22px; font-weight: 400; line-height: 1.2; }
+    details[open] summary { color: var(--accent); padding-bottom: 4px; }
+    details[open] summary::after { content: "−"; color: var(--accent); }
+    details p, details li { font-size: 15px; line-height: 1.8; color: var(--muted); }
+    details > p:last-child { margin-bottom: 18px; }
+    details:last-child:not([open]) summary { padding-bottom: 0; }
+    footer { max-width: 1040px; margin: auto; padding: 24px 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 560px) {
+      .topbar { padding: 20px; flex-wrap: wrap; gap: 16px; }
+      .page-nav { width: 100%; gap: 20px; }
+      main { margin-top: 16px; padding: 0 20px; }
+      .contact { padding: 20px; }
+      .document { gap: 16px; }
+      .document > section { padding: 20px; }
+      footer { padding: 22px 20px; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #121016; --paper: #1c1921; --ink: #eee9f4; --muted: #b6aebf; --accent: #bba0ff; --tint: #2b223d; --line: #37303f; }
+    }
+    @media print {
+      :root { --bg: #fff; --paper: #fff; --ink: #111; --muted: #444; --accent: #111; --tint: #f3f3f3; --line: #ddd; }
+      .topbar, .tools, .skip, footer { display: none; }
+      main { max-width: none; padding: 0; margin: 0; }
+      .document { display: block; }
+      .document > section { border: 0; padding: 20px 0; }
+      .contact { display: block; border: 0; padding: 0; }
+      .email { background: none; padding: 0; }
+      summary::after { display: none; }
+      section, details { break-inside: avoid; }
+      details > :not(summary) { display: block !important; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content" data-skip-link>跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="积木工坊 Brick Workshop 首页">
+      <img src="assets/app-icon.png" width="40" height="40" alt="" aria-hidden="true">
+      <span><strong>积木工坊</strong><small>Brick Workshop</small></span>
+    </a>
+    <nav class="page-nav" aria-label="页面导航">
+      <a href="privacy.html#zh" data-page-link="privacy.html">隐私政策 / Privacy</a>
+      <a href="support.html#zh" data-page-link="support.html" aria-current="page">技术支持 / Support</a>
+    </nav>
+  </header>
+  <main id="content" tabindex="-1">
+    <div class="tools">
+      <span class="eyebrow">Brick Workshop · Support</span>
+      <nav class="languages" aria-label="语言 / Language">
+        <a href="#zh" data-language-link="zh" aria-current="true" lang="zh-CN">简体中文</a>
+        <a href="#en" data-language-link="en" lang="en">English</a>
+      </nav>
+    </div>
+    <article id="zh" lang="zh-CN" data-language="zh">
+      <h1>技术支持</h1>
+      <p class="meta">积木工坊 · iOS 1.0.0 · 更新于 <time datetime="2026-10-13">2026 年 10 月 13 日</time></p>
+      <p class="intro">从一个 3D 模型，到一份可以逐步拼装的积木方案。关于导入、保存、拼装和 Pro 购买的问题，可以先查看下方说明，也可以直接联系我们。</p>
+      <aside class="contact" aria-label="联系开发者">
+        <h2>联系开发者</h2>
+        <p>开发者：杜胜勇</p>
+        <p>联系邮箱： <a class="email" href="mailto:dulage15@gmail.com?subject=Brick%20Workshop%20Support">dulage15@gmail.com</a></p>
+        <p class="small">点击邮箱可使用设备上的邮件应用发送反馈，也可以复制地址到您常用的邮箱。</p>
+      </aside>
+      <div class="document">
+        <section>
+          <h2>开始使用</h2>
+          <ol>
+            <li>在“首页”导入一个 <strong>.glb</strong> 文件，大小不超过 <strong>60 MB</strong>；也可以先试用应用内置的示例模型。</li>
+            <li>查看模型、调整生成参数，点击“生成拼装方案”。生成后可按需使用“体素微调”，再生成积木效果。</li>
+            <li>点击“保存并开始拼装”，进入“工作台”查看拼装步骤；也可以先“保存到我的项目”。</li>
+            <li>在“我的项目”页面重新打开已保存的作品，继续之前的拼装进度。</li>
+          </ol>
+        </section>
+        <section>
+          <h2>常见问题</h2>
+          <details>
+            <summary>支持哪些模型？为什么导入失败？</summary>
+            <p>当前支持 .glb 文件，大小上限为 60 MB。仅修改文件扩展名不会把其他格式转换成 GLB。建议导出包含三角网格、完整内嵌贴图和缓冲数据的 GLB。</p>
+            <p>如果导入失败，可先检查文件是否能在其他 3D 查看工具中正常显示，再尝试简化模型、减少贴图大小，或关闭额外的网格压缩。其他工具能打开的 GLB 也可能使用了本应用尚不支持的扩展；大型模型还需要更多处理时间和设备内存。</p>
+          </details>
+          <details>
+            <summary>颜色、细节或生成效果与原模型不同怎么办？</summary>
+            <p>模型会经过体素化和积木颜色匹配，细节与颜色可能有所变化。当前主要使用第一张可用的基础颜色贴图；没有可用贴图时使用一种材质颜色。多个材质的颜色和顶点色不会分别保留，外部贴图及部分压缩扩展也可能影响效果。</p>
+            <p>在“首页”调整模型尺寸、颜色与砖型等参数后，需要再次点击“生成拼装方案”。生成后可点击“体素微调”修整基础形状，再点击“生成并查看积木效果”。生成过程可能调整积木排列并补充连接积木，因此最终积木效果可能与编辑中的基础形状有所不同。</p>
+          </details>
+          <details>
+            <summary>为什么免费保存次数用完了？Pro 是订阅吗？</summary>
+            <p>iOS 免费版可保存 3 份新生成的方案；成功保存新方案后才扣除次数。同一个已保存的预览，再点击“保存并开始拼装”不会重复计次；重新生成并保存为新项目则会计次。删除项目不会返还次数，重新安装也不保证重置额度。</p>
+            <p>积木工坊 Pro 是<strong>一次性购买的非消耗型内购</strong>，没有自动续费。在 Apple 确认购买权益有效时，Pro 解除新生成方案的保存次数限制；免费版也可以导入、预览和生成方案。实际价格以购买面板显示的 App Store 价格为准。</p>
+          </details>
+          <details>
+            <summary>已购买 Pro，重新安装或换设备后如何恢复？</summary>
+            <p>如果 Pro 尚未解锁，请在 App Store 登录购买时使用的同一 Apple 账户，打开积木工坊“我的”页面，点击“积木工坊 Pro”，在购买面板选择“恢复购买”，并保持网络连接。已经识别到有效权益时，应用会直接显示已解锁状态，不必再次购买。</p>
+            <p>如果仍未恢复，请检查系统是否允许 App 内购买，重新打开 App 后再试。恢复购买恢复的是 Pro 使用资格，不会恢复原设备上的本地项目。您也可以参考 <a href="https://support.apple.com/zh-cn/108096">Apple 的恢复购买说明</a>。</p>
+          </details>
+          <details>
+            <summary>内购连接失败或扣款问题怎么处理？</summary>
+            <p>先确认网络连接和 App Store 账户状态。如果价格加载失败或无法连接 App Store，请在网络恢复后关闭并重新打开 App，再尝试购买。如果提示“App Store 内购商品尚未配置”，请联系开发者。已经付款但未解锁时，请先尝试“恢复购买”，避免重复发起购买。</p>
+            <p>退款与账单问题可通过 <a href="https://reportaproblem.apple.com/">Apple 报告问题页面</a>申请处理；退款资格及结果由 Apple 决定。购买被退款或撤销后，应用收到更新的购买权益信息时可能停止提供 Pro。具体步骤见 <a href="https://support.apple.com/zh-cn/118223">Apple 的退款说明</a>。应用问题请联系上方支持邮箱。</p>
+          </details>
+          <details>
+            <summary>导入、生成或购买需要联网吗？</summary>
+            <p>文件已下载到设备、且资源完整内嵌时，模型解析、体素编辑、方案生成和项目保存可以在本机完成，不需要上传模型。若选取的文件尚在 iCloud 云盘或其他云存储中，系统可能需要联网下载。若 GLB 引用外部网址的贴图或缓冲数据，解析器也可能自动联网请求它们；当前没有单独的外部资源联网开关。</p>
+            <p>App Store 查价、购买和主动恢复购买可能需要联网。已经在本机验证有效的 Pro 权益不要求持续联网。本应用没有项目云同步；恢复 Pro 只恢复购买权益。外部请求和系统设备备份的说明见隐私政策。</p>
+          </details>
+          <details>
+            <summary>项目存在哪里？删除后能恢复吗？</summary>
+            <p>项目和拼装进度保存在本机，重新打开已保存的项目可以继续拼装，应用没有自行提供项目云同步。删除项目后，可以在提示条仍显示时选择“撤销”（默认显示约 6 秒）。提示消失后，应用没有回收站，开发者也没有远程副本可用于恢复。</p>
+            <p>删除 App 可能导致本地项目丢失；恢复 Pro 购买不会恢复项目。请另外保留重要模型的源 GLB，便于重新导入和生成；重新生成不会找回原项目的编辑结果和拼装进度。系统设备备份是否可恢复应用数据，取决于您的备份情况。</p>
+          </details>
+          <details>
+            <summary>如何删除项目或了解隐私处理方式？</summary>
+            <p>在“我的项目”页面点击项目的更多操作按钮，选择“删除”并确认。这会删除已保存的项目，不会删除系统“文件”等位置的源 GLB，也不会返还已使用的免费保存次数。</p>
+            <p>模型处理、本地数据、设备上记录的免费保存次数、Apple 服务及支持邮件的说明，请查看<a href="privacy.html#zh" data-page-link="privacy.html">隐私政策</a>。</p>
+          </details>
+        </section>
+        <section>
+          <h2>反馈问题时，提供这些信息会更有帮助</h2>
+          <ul>
+            <li>您的设备型号、iOS 版本和积木工坊版本。</li>
+            <li>出现问题前的操作步骤，以及实际结果和您期望的结果。</li>
+            <li>错误提示或必要的截图；模型问题可补充文件大小及导出工具。</li>
+          </ul>
+          <div class="note">请勿发送密码、完整支付信息或 API 密钥。若模型包含敏感内容，可以先用不含敏感数据的简化示例说明问题。支持邮件中的信息处理方式见<a href="privacy.html#zh" data-page-link="privacy.html">隐私政策</a>。</div>
+        </section>
+      </div>
+    </article>
+    <article id="en" lang="en" data-language="en">
+      <h1>Support</h1>
+      <p class="meta">Brick Workshop · iOS 1.0.0 · Updated <time datetime="2026-10-13">October 13, 2026</time></p>
+      <p class="intro">Turn a 3D model into a plan you can build, one brick at a time. For help importing, saving, building or purchasing Pro, check the answers below or contact us directly.</p>
+      <aside class="contact" aria-label="Contact the developer">
+        <h2>Contact the developer</h2>
+        <p>Developer: 杜胜勇</p>
+        <p>Contact email: <a class="email" href="mailto:dulage15@gmail.com?subject=Brick%20Workshop%20Support">dulage15@gmail.com</a></p>
+        <p class="small">Select the address to compose an email in your mail app, or copy it into your preferred email service.</p>
+      </aside>
+      <div class="document">
+        <section>
+          <h2>Getting started</h2>
+          <ol>
+            <li>Import a <strong>.glb</strong> file up to <strong>60 MB</strong> from Home, or try one of the built-in examples.</li>
+            <li>Preview the model, adjust generation settings, then select Generate Building Plan. After generation, optionally use Edit Voxels and generate a new brick preview.</li>
+            <li>Select Save &amp; Start Building to open Build and follow the steps, or choose Save to My Projects first.</li>
+            <li>Reopen a saved creation from My Projects to continue your previous building progress.</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Frequently asked questions</h2>
+          <details>
+            <summary>Which models are supported? Why did an import fail?</summary>
+            <p>The app currently supports .glb files up to 60 MB. Renaming another file's extension does not convert it to GLB. Export a GLB containing triangle meshes and fully embedded textures and buffer data.</p>
+            <p>If an import fails, check whether the file opens in another 3D viewer, then try simplifying the model, reducing texture sizes or disabling additional mesh compression. A GLB that opens elsewhere may still use extensions this app does not support. Large models also require more processing time and device memory.</p>
+          </details>
+          <details>
+            <summary>Why do the colors, details or generated result look different?</summary>
+            <p>Voxelization and matching to brick colors can change details and colors. The app mainly uses the first available base-color texture, or a single material color if no usable texture is available. It does not preserve the separate colors of multiple materials or vertex colors. External textures and some compression extensions may also affect the result.</p>
+            <p>After adjusting model size, color or brick settings on Home, select Generate Building Plan again. Once generated, select Edit Voxels to refine the base shape, then Generate Brick Preview. Generation may rearrange bricks and add connecting bricks, so the final brick preview may differ from the base shape in the editor.</p>
+          </details>
+          <details>
+            <summary>Why have my free saves run out? Is Pro a subscription?</summary>
+            <p>The iOS free version allows 3 newly generated plans to be saved. A save is counted only after a new plan is successfully saved. Selecting Save &amp; Start Building for the same saved preview does not count again; regenerating and saving a new project does. Deleting projects does not restore the allowance, and reinstalling does not guarantee a reset.</p>
+            <p>Brick Workshop Pro is a <strong>one-time, non-consumable in-app purchase</strong> with no automatic renewal. While Apple confirms a valid entitlement, Pro removes the limit on saving newly generated plans. The free version also supports importing, previewing and generating plans. The App Store price shown in the purchase panel applies.</p>
+          </details>
+          <details>
+            <summary>How do I restore Pro after reinstalling or changing devices?</summary>
+            <p>If Pro is not unlocked, sign in to the App Store with the same Apple Account used to buy it. Open Me in Brick Workshop, select Brick Workshop Pro, then choose Restore Purchases in the purchase panel while connected to the internet. If the app has already recognized a valid entitlement, it shows Pro as unlocked without requiring another purchase.</p>
+            <p>If Pro does not restore, check that in-app purchases are allowed on your device, then close and reopen the app before trying again. Restoring a purchase restores Pro access, not local projects from your previous device. See <a href="https://support.apple.com/en-us/108096">Apple's restore-purchase guidance</a>.</p>
+          </details>
+          <details>
+            <summary>What if a purchase cannot connect or I have a billing issue?</summary>
+            <p>Check your connection and App Store account. If pricing fails to load or the app cannot connect to the App Store, close and reopen the app once your connection is restored, then try purchasing again. If the app says the in-app product is not configured, contact the developer. If you were charged but Pro did not unlock, try Restore Purchases before initiating another purchase.</p>
+            <p>For refunds or billing concerns, use <a href="https://reportaproblem.apple.com/">Apple's Report a Problem page</a>. Apple determines refund eligibility and the outcome. A refund or revocation may remove Pro access when the app receives updated entitlement information. See <a href="https://support.apple.com/en-us/118223">Apple's refund instructions</a>. Contact the support email above for app issues.</p>
+          </details>
+          <details>
+            <summary>Do importing, generating or purchases need the internet?</summary>
+            <p>Once a file is downloaded to your device and its resources are fully embedded, model parsing, voxel editing, plan generation and project saving can run locally without uploading the model. A file stored in iCloud Drive or another cloud service may need an internet connection to download. If a GLB references textures or buffers at external URLs, the parser may also automatically request them. There is no separate control for these requests.</p>
+            <p>App Store pricing, purchases and an explicit restore may need an internet connection. Pro access already verified locally does not require a continuous connection. The app has no project cloud sync; restoring Pro restores the purchase entitlement only. The privacy policy explains external requests and system device backups.</p>
+          </details>
+          <details>
+            <summary>Where are projects stored? Can I recover a deleted project?</summary>
+            <p>Projects and building progress are stored on your device. Reopen a saved project to continue building; the app provides no project cloud sync of its own. After deleting a project, select Undo while the notification remains visible (about 6 seconds by default). Once it disappears, there is no in-app trash, and the developer has no remote copy to restore.</p>
+            <p>Deleting the app may remove local projects, and restoring Pro does not restore projects. Keep important source GLB files separately so you can import and generate them again. Regenerating does not recover the original project's edits or building progress. Recovery through a system device backup depends on your backup.</p>
+          </details>
+          <details>
+            <summary>How do I delete a project or learn about privacy?</summary>
+            <p>On My Projects, open the project's more-actions menu, choose Delete and confirm. This deletes the saved project without deleting the source GLB stored in Files or another location, and does not restore used free saves.</p>
+            <p>Read the <a href="privacy.html#en" data-page-link="privacy.html">Privacy Policy</a> for details about models, local data, on-device free-save counts, Apple services and support emails.</p>
+          </details>
+        </section>
+        <section>
+          <h2>Helpful information to include in a support request</h2>
+          <ul>
+            <li>Your device model, iOS version and Brick Workshop version.</li>
+            <li>The steps leading to the issue, what happened and what you expected.</li>
+            <li>The error message or a relevant screenshot. For model issues, include the file size and export tool.</li>
+          </ul>
+          <div class="note">Do not send passwords, full payment details or API keys. If a model contains sensitive content, start with a simplified example that contains no sensitive information. Our handling of support emails is described in the <a href="privacy.html#en" data-page-link="privacy.html">Privacy Policy</a>.</div>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer><span>© 2026 积木工坊 · Brick Workshop</span><a href="mailto:dulage15@gmail.com">dulage15@gmail.com</a></footer>
+  <script>
+    (() => {
+      const languageLinks = document.querySelectorAll('[data-language-link]');
+      const applyLanguage = () => {
+        const language = location.hash === '#en' ? 'en'
+          : location.hash === '#zh' ? 'zh'
+          : document.documentElement.lang === 'en' ? 'en' : 'zh';
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+        document.querySelectorAll('[data-language]').forEach(panel => {
+          panel.hidden = panel.dataset.language !== language;
+        });
+        languageLinks.forEach(link => {
+          if (link.dataset.languageLink === language) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+        document.querySelectorAll('[data-page-link]').forEach(link => {
+          link.href = link.dataset.pageLink + '#' + language;
+        });
+        document.querySelector('[data-skip-link]').textContent = language === 'en' ? 'Skip to content' : '跳到正文';
+        document.title = language === 'en' ? 'Support · Brick Workshop' : '技术支持 · 积木工坊 Brick Workshop';
+      };
+      applyLanguage();
+      addEventListener('hashchange', applyLanguage);
+    })();
+  </script>
+</body>
+</html>
