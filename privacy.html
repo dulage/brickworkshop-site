@@ -9,8 +9,8 @@
   <link rel="icon" type="image/png" sizes="1024x1024" href="assets/app-icon.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
   <title>隐私政策 · 积木工坊 Brick Workshop</title>
+  <link rel="stylesheet" href="theme.css">
   <style>
-    :root { color-scheme: light dark; --bg: #f9f8fd; --paper: #fff; --ink: #25202e; --muted: #686173; --accent: #6d28d9; --tint: #f2ecff; --line: #e8e2ef; }
     * { box-sizing: border-box; }
     [hidden] { display: none !important; }
     body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
@@ -67,9 +67,6 @@
       .document { padding: 6px 20px; border-radius: 16px; }
       footer { padding: 22px 20px; }
     }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #121016; --paper: #1c1921; --ink: #eee9f4; --muted: #b6aebf; --accent: #bba0ff; --tint: #2b223d; --line: #37303f; }
-    }
     @media print {
       :root { --bg: #fff; --paper: #fff; --ink: #111; --muted: #444; --accent: #111; --tint: #f3f3f3; --line: #ddd; }
       .topbar, .tools, .skip, footer { display: none; }
@@ -102,7 +99,7 @@
     </div>
     <article id="zh" lang="zh-CN" data-language="zh">
       <h1>积木工坊 隐私政策</h1>
-      <p class="meta">更新日期：2026年10月13日</p>
+      <p class="meta">更新日期：2026年10月21日</p>
       <p class="intro">本政策说明积木工坊（Brick Workshop）在您使用 iOS 应用以及联系支持服务时，如何处理相关信息。</p>
       <div class="document">
         <section>
@@ -123,7 +120,8 @@
         </section>
         <section>
           <h2>四、保存与删除</h2>
-          <p>项目和设置保存在本机。您可以在“我的项目”中删除项目；这不会删除您在系统“文件”等位置保存的源模型。选择 iOS 的“删除 App”会移除应用内的项目、设置和临时文件。</p>
+          <p>项目、草稿和设置保存在本机。您可以在“我的项目”中删除项目；这不会删除您在系统“文件”等位置保存的源模型。选择 iOS 的“删除 App”会移除应用内的项目、草稿、设置和临时文件。</p>
+          <p>首页会自动保留最近一份创作草稿，包含模型解析数据、生成参数、最近的成品预览和体素微调记录，供重新打开应用时继续使用。关闭首页中的模型可清除该模型的数据、预览和微调草稿，生成参数会保留。自动草稿不会自动添加到“我的项目”。</p>
           <p>导入时可能产生临时模型副本，由系统管理和清理。重新安装应用不保证重置免费额度。系统设备备份可能包含应用数据，由您的备份设置管理。</p>
           <p>应用不提供项目云同步，我们无法远程读取或代为删除您的本地项目。您可以不导入文件或停止使用相关功能。</p>
         </section>
@@ -155,7 +153,7 @@
     </article>
     <article id="en" lang="en" data-language="en">
       <h1>Brick Workshop Privacy Policy</h1>
-      <p class="meta">Last updated: October 13, 2026</p>
+      <p class="meta">Last updated: October 21, 2026</p>
       <p class="intro">This policy explains how Brick Workshop (积木工坊) handles information when you use the iOS app or contact support.</p>
       <div class="document">
         <section>
@@ -176,7 +174,8 @@
         </section>
         <section>
           <h2>4. Retention and deletion</h2>
-          <p>Projects and preferences are stored on your device. You can delete projects on the Projects screen; this does not delete source models stored in Files or elsewhere. Choosing Delete App in iOS removes the app&#39;s projects, preferences and temporary files.</p>
+          <p>Projects, drafts and preferences are stored on your device. You can delete projects on the Projects screen; this does not delete source models stored in Files or elsewhere. Choosing Delete App in iOS removes the app&#39;s projects, drafts, preferences and temporary files.</p>
+          <p>The Home screen automatically keeps your latest creation draft, including parsed model data, generation settings, the latest brick preview and voxel edits, so you can continue after reopening the app. Closing the model on the Home screen clears its model data, preview and voxel edits; generation settings remain. Drafts are not automatically added to Projects.</p>
           <p>Importing may create temporary model copies that the system manages and clears. Reinstalling the app does not guarantee a reset of the free allowance. System device backups may include app data and are managed through your backup settings.</p>
           <p>The app provides no project cloud sync, and we cannot remotely access or delete your local projects. You can choose not to import files or stop using the relevant features.</p>
         </section>
