@@ -9,8 +9,8 @@
   <link rel="icon" type="image/png" sizes="1024x1024" href="assets/app-icon.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
   <title>技术支持 · 积木工坊 Brick Workshop</title>
+  <link rel="stylesheet" href="theme.css">
   <style>
-    :root { color-scheme: light dark; --bg: #f9f8fd; --paper: #fff; --ink: #25202e; --muted: #686173; --accent: #6d28d9; --tint: #f2ecff; --line: #e8e2ef; }
     * { box-sizing: border-box; }
     [hidden] { display: none !important; }
     body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
@@ -74,9 +74,6 @@
       .document { gap: 16px; }
       .document > section { padding: 20px; }
       footer { padding: 22px 20px; }
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #121016; --paper: #1c1921; --ink: #eee9f4; --muted: #b6aebf; --accent: #bba0ff; --tint: #2b223d; --line: #37303f; }
     }
     @media print {
       :root { --bg: #fff; --paper: #fff; --ink: #111; --muted: #444; --accent: #111; --tint: #f3f3f3; --line: #ddd; }
@@ -167,7 +164,7 @@
           </details>
           <details>
             <summary>项目存在哪里？删除后能恢复吗？</summary>
-            <p>项目和拼装进度保存在本机，重新打开已保存的项目可以继续拼装，应用没有自行提供项目云同步。删除项目后，可以在提示条仍显示时选择“撤销”（默认显示约 6 秒）。提示消失后，应用没有回收站，开发者也没有远程副本可用于恢复。</p>
+            <p>项目和拼装进度保存在本机，重新打开已保存的项目可以继续拼装，应用没有自行提供项目云同步。项目确认删除后无法在应用内恢复；应用没有回收站，开发者也没有远程副本可用于恢复。</p>
             <p>删除 App 可能导致本地项目丢失；恢复 Pro 购买不会恢复项目。请另外保留重要模型的源 GLB，便于重新导入和生成；重新生成不会找回原项目的编辑结果和拼装进度。系统设备备份是否可恢复应用数据，取决于您的备份情况。</p>
           </details>
           <details>
@@ -241,7 +238,7 @@
           </details>
           <details>
             <summary>Where are projects stored? Can I recover a deleted project?</summary>
-            <p>Projects and building progress are stored on your device. Reopen a saved project to continue building; the app provides no project cloud sync of its own. After deleting a project, select Undo while the notification remains visible (about 6 seconds by default). Once it disappears, there is no in-app trash, and the developer has no remote copy to restore.</p>
+            <p>Projects and building progress are stored on your device. Reopen a saved project to continue building; the app provides no project cloud sync of its own. Once confirmed, deletion cannot be undone in the app. There is no in-app trash, and the developer has no remote copy to restore.</p>
             <p>Deleting the app may remove local projects, and restoring Pro does not restore projects. Keep important source GLB files separately so you can import and generate them again. Regenerating does not recover the original project's edits or building progress. Recovery through a system device backup depends on your backup.</p>
           </details>
           <details>
