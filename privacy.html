@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="积木工坊 Brick Workshop 隐私政策：本地模型处理、数据保存与删除、Apple 内购和联系方式。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <title>隐私政策 · 积木工坊 Brick Workshop</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 4px; }
+    .skip { position: absolute; left: 16px; top: -100px; z-index: 2; background: var(--paper); padding: 8px 16px; }
+    .skip:focus { top: 12px; }
+    .topbar { max-width: 1040px; margin: auto; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+    .brand img { display: block; flex: none; width: 40px; height: 40px; border-radius: 10px; }
+    .brand strong { display: block; font-size: 17px; line-height: 1.35; }
+    .brand small { display: block; color: var(--muted); font-size: 12px; letter-spacing: .025em; }
+    .page-nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; }
+    .page-nav a { text-decoration: none; color: var(--muted); }
+    .page-nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+    main { max-width: 840px; margin: 22px auto 64px; padding: 0 28px; }
+    .tools { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .eyebrow { color: var(--muted); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .languages { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); padding: 4px; }
+    .languages a { min-width: 70px; padding: 3px 12px; text-align: center; border-radius: 999px; color: var(--muted); font-size: 13px; text-decoration: none; }
+    .languages a[aria-current="true"] { color: var(--accent); background: var(--tint); font-weight: 600; }
+    article { scroll-margin-top: 24px; }
+    h1 { margin: 0 0 12px; font-size: clamp(32px, 6vw, 46px); line-height: 1.25; letter-spacing: -.035em; }
+    .meta { margin: 0 0 22px; font-size: 13px; color: var(--muted); }
+    .intro { margin: 0 0 26px; color: var(--muted); font-size: 17px; }
+    .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .highlight { background: var(--tint); border-radius: 14px; padding: 16px; }
+    .highlight strong { display: block; color: var(--accent); font-size: 15px; }
+    .highlight span { display: block; font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 4px; }
+    .document { border: 1px solid var(--line); border-radius: 20px; background: var(--paper); padding: 12px 32px; }
+    section { padding: 24px 0; }
+    section + section { border-top: 1px solid var(--line); }
+    h2 { font-size: 19px; line-height: 1.5; margin: 0 0 14px; }
+    p { margin: 12px 0; }
+    p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 1.4em; margin: 12px 0; }
+    li + li { margin-top: 8px; }
+    .note { background: var(--tint); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-top: 18px; font-size: 14px; }
+    .data-list { margin: 0; }
+    .data-list div { padding: 12px 0; }
+    .data-list div + div { border-top: 1px dashed var(--line); }
+    .data-list dt { font-weight: 600; }
+    .data-list dd { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
+    .email { font-size: 18px; font-weight: 600; }
+    footer { max-width: 1040px; margin: auto; padding: 24px 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 560px) {
+      .topbar { padding: 20px; flex-wrap: wrap; gap: 16px; }
+      .page-nav { width: 100%; gap: 20px; }
+      main { margin-top: 16px; padding: 0 20px; }
+      .highlights { grid-template-columns: 1fr; gap: 8px; }
+      .highlight { padding: 12px 16px; }
+      .highlight span { margin-top: 2px; }
+      .document { padding: 6px 20px; border-radius: 16px; }
+      footer { padding: 22px 20px; }
+    }
+    @media print {
+      :root { --bg: #fff; --paper: #fff; --ink: #111; --muted: #444; --accent: #111; --tint: #f3f3f3; --line: #ddd; }
+      .topbar, .tools, .skip, footer { display: none; }
+      main { max-width: none; padding: 0; margin: 0; }
+      .document { border: 0; padding: 0; }
+      section { break-inside: avoid; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content" data-skip-link>跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="积木工坊官网首页 / Brick Workshop home">
+      <img src="assets/app-icon.png" width="40" height="40" alt="" aria-hidden="true">
+      <span><strong>积木工坊</strong><small>Brick Workshop</small></span>
+    </a>
+    <nav class="page-nav" aria-label="页面导航">
+      <a href="privacy.html#zh" data-page-link="privacy.html" aria-current="page">隐私政策 / Privacy</a>
+      <a href="support.html#zh" data-page-link="support.html">技术支持 / Support</a>
+    </nav>
+  </header>
+  <main id="content" tabindex="-1">
+    <div class="tools">
+      <span class="eyebrow">Brick Workshop · Privacy</span>
+      <nav class="languages" aria-label="语言 / Language">
+        <a href="#zh" data-language-link="zh" aria-current="true" lang="zh-CN">简体中文</a>
+        <a href="#en" data-language-link="en" lang="en">English</a>
+      </nav>
+    </div>
+    <article lang="zh-CN" data-language="zh">
+      <h1>隐私政策</h1>
+      <p class="meta">更新日期：2026年10月21日</p>
+      <p class="intro">本政策说明积木工坊（Brick Workshop）在您使用 iOS 应用以及联系支持服务时，如何处理相关信息。</p>
+      <div class="document">
+        <section>
+          <h2>一、设备上的信息</h2>
+          <p>积木工坊无需注册账号，不使用广告网络，不进行跨应用追踪，也不收集用于分析用户行为的统计数据。我们不会出售、出租或出于广告目的共享您的个人信息。</p>
+          <p>您选择的 GLB 模型在设备上处理，应用不会将模型或项目上传给我们。模型、拼装方案、项目名称、预览图和拼装进度保存在本机，用于保存和继续使用项目。</p>
+          <p>主题、语言等本地设置用于保留您的偏好。免费保存次数等本地状态由 iOS 提供的本地存储机制保存，用于应用功能运行和免费额度管理。这些信息不会上传至开发者服务器。</p>
+        </section>
+        <section>
+          <h2>二、App Store 购买</h2>
+          <p>Pro 购买由 Apple App Store 处理。应用通过 Apple 提供的购买服务验证购买状态并恢复已购买权益。我们不会获取您的银行卡号、完整支付账户信息或 Apple 账户密码。</p>
+          <p>Apple 对购买相关信息的处理适用其隐私政策：<br><a href="https:&#47;&#47;www.apple.com&#47;legal&#47;privacy&#47;">https:&#47;&#47;www.apple.com&#47;legal&#47;privacy&#47;</a></p>
+        </section>
+        <section>
+          <h2>三、联网请求与第三方</h2>
+          <p>如果模型引用网络上的贴图或其他资源，应用可能在加载时自动请求相应网址。资源提供方可能收到您的 IP 地址、资源地址和必要的请求信息。您可以使用资源全部内嵌的 GLB，避免这类请求。</p>
+          <p>隐私和支持网页可能由第三方托管服务提供。托管服务可能为安全和运营需要处理 IP 地址等访问日志，具体以服务提供方的隐私规则为准。网页本身不使用广告或访问统计。若使用 GitHub Pages，其访问日志说明见：<br><a href="https:&#47;&#47;docs.github.com&#47;en&#47;pages&#47;getting-started-with-github-pages&#47;what-is-github-pages#data-collection">https:&#47;&#47;docs.github.com&#47;en&#47;pages&#47;getting-started-with-github-pages&#47;what-is-github-pages#data-collection</a></p>
+        </section>
+        <section>
+          <h2>四、保存与删除</h2>
+          <p>项目、草稿和设置保存在本机。您可以在“我的项目”中删除项目；这不会删除您在系统“文件”等位置保存的源模型。选择 iOS 的“删除 App”会移除应用内的项目、草稿、设置和临时文件。</p>
+          <p>首页会自动保留最近一份创作草稿，包含模型解析数据、生成参数、最近的成品预览和体素微调记录，供重新打开应用时继续使用。关闭首页中的模型可清除该模型的数据、预览和微调草稿，生成参数会保留。自动草稿不会自动添加到“我的项目”。</p>
+          <p>导入时可能产生临时模型副本，由系统管理和清理。重新安装应用不保证重置免费额度。系统设备备份可能包含应用数据，由您的备份设置管理。</p>
+          <p>应用不提供项目云同步，我们无法远程读取或代为删除您的本地项目。您可以不导入文件或停止使用相关功能。</p>
+        </section>
+        <section>
+          <h2>五、系统文件访问</h2>
+          <p>应用通过 iOS 系统文件选择器导入您主动选择的 GLB 文件，用于本地模型处理。当前版本不请求照片库访问权限。</p>
+        </section>
+        <section>
+          <h2>六、支持邮件</h2>
+          <p>您主动发送支持邮件时，我们会收到您的邮箱地址、邮件内容，以及您选择附上的截图或文件。这些信息只用于回复、排查问题和必要的后续沟通，不用于广告或用户画像。</p>
+          <p>支持信息在处理问题和必要的后续沟通期间保留，不再需要时删除或去除可识别信息；依法需要保留的除外。您可以通过下方邮箱请求查阅、更正、删除这些信息，或撤回相关同意。</p>
+          <p>我们使用 Gmail 电子邮件服务处理支持请求，Google 可能根据其隐私政策处理相关信息：<br><a href="https:&#47;&#47;policies.google.com&#47;privacy">https:&#47;&#47;policies.google.com&#47;privacy</a></p>
+        </section>
+        <section>
+          <h2>七、儿童隐私</h2>
+          <p>本应用不针对儿童设计，也不会主动收集儿童个人信息。如果监护人认为儿童在支持邮件中向我们提供了个人信息，请通过“联系我们”中的邮箱通知我们，我们会根据适用法律核实并处理。</p>
+        </section>
+        <section>
+          <h2>八、政策更新</h2>
+          <p>信息处理方式发生变化时，我们会更新本政策并注明日期。涉及个人信息处理的重要变更时，我们会按适用要求告知您，并在需要时征求您的同意。</p>
+        </section>
+        <section>
+          <h2>九、联系我们</h2>
+          <p>如有隐私问题或个人信息处理请求，请联系：</p>
+          <p>开发者：杜胜勇</p>
+          <p>联系邮箱： <a class="email" href="mailto:dulage15@gmail.com">dulage15@gmail.com</a></p>
+        </section>
+      </div>
+    </article>
+    <article lang="en" data-language="en">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: October 21, 2026</p>
+      <p class="intro">This policy explains how Brick Workshop (积木工坊) handles information when you use the iOS app or contact support.</p>
+      <div class="document">
+        <section>
+          <h2>1. Information on your device</h2>
+          <p>Brick Workshop requires no account, uses no advertising networks, does not engage in cross-app tracking, and does not collect statistics for analyzing user behavior. We do not sell or rent your personal information, or share it for advertising purposes.</p>
+          <p>The GLB models you choose are processed on your device. The app does not upload models or projects to us. Models, building plans, project names, previews and building progress are stored locally so you can save and continue projects.</p>
+          <p>Local preferences such as theme and language preserve your choices. Local state, including free-save counts, is stored using local storage mechanisms provided by iOS to operate app features and manage the free allowance. This information is not uploaded to developer-operated servers.</p>
+        </section>
+        <section>
+          <h2>2. App Store purchases</h2>
+          <p>Apple&#39;s App Store handles Pro purchases. The app uses Apple&#39;s purchase services to verify purchase status and restore purchased access. We do not receive your card number, full payment account details or Apple Account password.</p>
+          <p>Apple handles purchase-related information under its privacy policy:<br><a href="https:&#47;&#47;www.apple.com&#47;legal&#47;privacy&#47;">https:&#47;&#47;www.apple.com&#47;legal&#47;privacy&#47;</a></p>
+        </section>
+        <section>
+          <h2>3. Network requests and third parties</h2>
+          <p>If a model references textures or other resources on the internet, the app may automatically request those URLs when loading it. Resource providers may receive your IP address, resource URL and necessary request information. You can use a GLB with fully embedded resources to avoid these requests.</p>
+          <p>The privacy and support pages may use a third-party hosting service. Hosting providers may process access logs, including IP addresses, for security and operational purposes under their privacy practices. The pages themselves use no advertising or visitor analytics. If GitHub Pages is used, its access-log information is available here:<br><a href="https:&#47;&#47;docs.github.com&#47;en&#47;pages&#47;getting-started-with-github-pages&#47;what-is-github-pages#data-collection">https:&#47;&#47;docs.github.com&#47;en&#47;pages&#47;getting-started-with-github-pages&#47;what-is-github-pages#data-collection</a></p>
+        </section>
+        <section>
+          <h2>4. Retention and deletion</h2>
+          <p>Projects, drafts and preferences are stored on your device. You can delete projects on the Projects screen; this does not delete source models stored in Files or elsewhere. Choosing Delete App in iOS removes the app&#39;s projects, drafts, preferences and temporary files.</p>
+          <p>The Home screen automatically keeps your latest creation draft, including parsed model data, generation settings, the latest brick preview and voxel edits, so you can continue after reopening the app. Closing the model on the Home screen clears its model data, preview and voxel edits; generation settings remain. Drafts are not automatically added to Projects.</p>
+          <p>Importing may create temporary model copies that the system manages and clears. Reinstalling the app does not guarantee a reset of the free allowance. System device backups may include app data and are managed through your backup settings.</p>
+          <p>The app provides no project cloud sync, and we cannot remotely access or delete your local projects. You can choose not to import files or stop using the relevant features.</p>
+        </section>
+        <section>
+          <h2>5. System file access</h2>
+          <p>The app uses the iOS system file picker to import GLB files you choose for on-device model processing. This version does not request photo-library access.</p>
+        </section>
+        <section>
+          <h2>6. Support emails</h2>
+          <p>If you email support, we receive your email address, message and any screenshots or files you choose to attach. We use this information only to respond, troubleshoot and carry out necessary follow-up, not for advertising or profiling.</p>
+          <p>We retain support information while handling the issue and necessary follow-up, then delete it or remove identifying information when no longer needed, unless retention is legally required. You can contact the email below to request access, correction or deletion, or withdraw your consent to this processing.</p>
+          <p>We use Gmail to handle support requests. Google may process related information under its privacy policy:<br><a href="https:&#47;&#47;policies.google.com&#47;privacy">https:&#47;&#47;policies.google.com&#47;privacy</a></p>
+        </section>
+        <section>
+          <h2>7. Children&#39;s privacy</h2>
+          <p>This app is not designed for children and does not actively collect children&#39;s personal information. If a parent or guardian believes a child has provided personal information to us in a support email, please notify us using the email in Contact us. We will review and handle the request under applicable law.</p>
+        </section>
+        <section>
+          <h2>8. Policy updates</h2>
+          <p>We will update this policy and its date when our information-handling practices change. For material changes to personal-information processing, we will provide notice and obtain consent where required.</p>
+        </section>
+        <section>
+          <h2>9. Contact us</h2>
+          <p>For privacy questions or requests about your personal information, contact:</p>
+          <p>Developer: 杜胜勇</p>
+          <p>Contact email: <a class="email" href="mailto:dulage15@gmail.com">dulage15@gmail.com</a></p>
+        </section>
+      </div>
+    </article>
+  </main>
+  <footer><span>© 2026 积木工坊 · Brick Workshop</span><a href="mailto:dulage15@gmail.com">dulage15@gmail.com</a></footer>
+  <script>
+    (() => {
+      const languageLinks = document.querySelectorAll('[data-language-link]');
+      const applyLanguage = () => {
+        const language = location.hash === '#en' ? 'en'
+          : location.hash === '#zh' ? 'zh'
+          : document.documentElement.lang === 'en' ? 'en' : 'zh';
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+        document.querySelectorAll('[data-language]').forEach(panel => {
+          panel.hidden = panel.dataset.language !== language;
+        });
+        languageLinks.forEach(link => {
+          if (link.dataset.languageLink === language) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+        document.querySelectorAll('[data-page-link]').forEach(link => {
+          link.href = link.dataset.pageLink + '#' + language;
+        });
+        document.querySelector('[data-skip-link]').textContent = language === 'en' ? 'Skip to content' : '跳到正文';
+        document.title = language === 'en' ? 'Privacy Policy · Brick Workshop' : '隐私政策 · 积木工坊 Brick Workshop';
+      };
+      applyLanguage();
+      addEventListener('hashchange', applyLanguage);
+    })();
+  </script>
+</body>
+</html>
