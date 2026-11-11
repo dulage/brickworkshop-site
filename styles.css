@@ -102,6 +102,20 @@ h2 { font-size: clamp(25px, 2.7vw, 34px); font-weight: 650; line-height: 1.5; le
 .footer-inner nav { display: flex; flex-wrap: wrap; gap: 25px; }
 .footer-inner nav a { display: inline-flex; align-items: center; min-height: 36px; }
 .footer-inner nav a:hover { color: var(--brand); }
+.footer-icp {
+  padding-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+.footer-icp a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+.footer-icp a:hover { color: var(--brand); }
 .image-dialog { width: fit-content; max-width: calc(100% - 28px); max-height: calc(100dvh - 28px); padding: 14px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); color: var(--ink); overscroll-behavior: contain; }
 .image-dialog::backdrop { background: #181024cc; backdrop-filter: blur(5px); }
 .dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-bottom: 12px; padding-left: 4px; font-size: 13px; }
@@ -179,7 +193,7 @@ h2 { font-size: clamp(25px, 2.7vw, 34px); font-weight: 650; line-height: 1.5; le
   .help-link small { font-size: 11px; }
 }
 @media (pointer: coarse) {
-  .footer-inner nav a, .dialog-close { min-height: 44px; min-width: 44px; }
+  .footer-inner nav a, .footer-icp a, .dialog-close { min-height: 44px; min-width: 44px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
